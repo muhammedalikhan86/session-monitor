@@ -6,15 +6,15 @@ h1 { margin: 0 0 4px; font-size: 24px; }
 .actions { display: flex; gap: 12px; align-items: center; }
 .muted { color: var(--muted); font-size: 13px; }
 .error { color: var(--danger); background: var(--danger-bg); padding: 8px 12px; border-radius: 6px; }
-.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
+.table-wrap { border: 1px solid var(--border); border-radius: 8px; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
-th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; white-space: nowrap; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; overflow-wrap: anywhere; }
 th { background: var(--head); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
 tr:last-child td { border-bottom: none; }
 .name { font-weight: 600; }
 .cwd { color: var(--muted); font-size: 12px; max-width: 380px; overflow: hidden; text-overflow: ellipsis; }
 .mono { font-family: ui-monospace, Consolas, monospace; }
-.pill { padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.pill { padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; }
 .pill.busy { background: var(--busy-bg); color: var(--busy); }
 .pill.idle { background: var(--idle-bg); color: var(--idle); }
 button { font: inherit; padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border); background: var(--btn); color: inherit; cursor: pointer; }
@@ -23,7 +23,7 @@ button.danger { border-color: var(--danger); color: var(--danger); background: t
 button.danger:hover { background: var(--danger-bg); }
 button:disabled { opacity: .5; cursor: default; }
 .pill.waiting { background: var(--chip); color: var(--text); }
-.row-actions { display: flex; gap: 8px; }
+.row-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .usage { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
 @media (max-width: 900px) { .usage { grid-template-columns: 1fr; } }
 .card { border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
@@ -35,8 +35,8 @@ button:disabled { opacity: .5; cursor: default; }
 .fill { height: 100%; background: var(--idle); border-radius: 999px; }
 .fill.mid { background: var(--busy); }
 .fill.high { background: var(--danger); }
-.session-col { width: 100px; min-width: 100px; max-width: 100px; }
-.session-col .name, .session-col .cwd { overflow: hidden; text-overflow: ellipsis; max-width: 100px; }
+.session-col { width: 250px; min-width: 250px; max-width: 250px; white-space: nowrap; }
+.session-col .name, .session-col .cwd { overflow: hidden; text-overflow: ellipsis; max-width: 250px; }
 /* Cut long paths at the start, so the folder name at the end stays visible. */
 .session-col .cwd { direction: rtl; text-align: left; }
 .session-col .cwd span { unicode-bidi: isolate; }
