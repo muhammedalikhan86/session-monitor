@@ -1,0 +1,9 @@
+{
+  "name": "claude-session-monitor",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm --prefix web run build",
+    "start": "npm run build && node server.mjs"
+  }
+}

@@ -1,0 +1,17 @@
+:root {
+  --bg: #ffffff; --text: #1d1d1f; --muted: #6b6b70; --border: #e2e2e6; --head: #f6f6f8;
+  --chip: #eef0f4; --btn: #ffffff;
+  --busy: #9a4b00; --busy-bg: #fff1e0; --idle: #1e6b2a; --idle-bg: #e4f5e7;
+  --danger: #c62828; --danger-bg: #fdecec;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17171a; --text: #ececf0; --muted: #9a9aa2; --border: #2e2e34; --head: #1f1f23;
+    --chip: #2a2a30; --btn: #232328;
+    --busy: #ffb366; --busy-bg: #3a2610; --idle: #7fd88f; --idle-bg: #15301b;
+    --danger: #ff6b6b; --danger-bg: #3a1616;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, "Segoe UI", sans-serif; }
